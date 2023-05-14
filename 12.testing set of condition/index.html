@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Testing Set Of Conditions With ES6 Logically Operator</h1>
+
+
+    <script type="module">
+
+        //Logical And Truth Table
+        // ---------------------------------------------------------------
+        // true && true -> true
+        // true && false -> false
+        // false && true -> false
+        // false && false -> false
+
+        // Logical OR truth table
+        // ----------------------------------------------------------------
+        // true || true -> true
+        // true || false -> true
+        // false || true -> true
+        // false || false -> false
+
+        // Logical Not Truth Table 
+        // ----------------------------------------------------------------
+        // !True -> False
+        // !False -> True
+
+        // let isOpen = false;
+        
+        // if (isOpen) {
+            // console.log("gate is already open");
+        // } else {
+            // openMainGate();
+            // console.log("gate is opening...");
+        // }
+
+        // let height = 4.5; // 5 feet 6 inch
+        // let yearOfEducation = 16
+
+        // if (height >= 5.5 || yearOfEducation >= 16) {
+        //     if (yearOfEducation >= 16) {
+        //         console.log("You Are Welcome For Commision");
+        //     } else {
+        //         console.log("You Are Welcome Soldier");
+        //     }
+        // }
+
+        // else {
+        //     console.log("Sorry! your education and height are too low to apply!"); 6
+        // }
+
+        let isOpen = false;
+        let userName = "Stevfen"
+        let userHeightInCm = 180;
+        let num = null;
+
+
+        // true && true && true && true  // will return last true value
+        // true && true && null && true  // will stop at falsy value, nd will return that falsy value
+        // false && true && false        // will stop at first falsy value and return that falsy value
+        
+        // let result = userName && num && "car";
+        // console.log("result: ", result);
+
+
+        // true || true || true || true  // will return first true value
+        // true || true || null || true  // will stop at first truthy value, nd will return that truthy value
+        // false || true || false        // will stop at first truthy value and return that thuthy value
+        // false || false || false        // will stop at last falsy value and return that value incase of no truth found
+    
+        // let result = isOpen || userName;
+        // console.log("result: ", result);
+
+        // let result = !num;
+        // console.log("result: ", result);
+
+
+
+        
+    </script>
+</body>
+</html>

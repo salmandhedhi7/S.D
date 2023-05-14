@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        let percentage = 100;
+        let num = 1
+
+        switch (true) {
+            case !Boolean(console.log("1")) && (percentage < 0):
+            console.log("Invalid Percentage Must Be Between 0 And 100");
+            console.log ("Counter:", num);
+            Break;
+
+            case !Boolean(console.log("2")) && (percentage >= 0 && percentage < 50):
+            console.log("Sorry You Are Failed");
+            console.log("Counter", num);    
+            Break;
+
+            case !Boolean(console.log("3")) && (percentage >= 50 && percentage < 60):
+            console.log("You Got C Grade");
+            console.log("Counter", num);    
+            Break;
+
+            case !Boolean(console.log("4")) && (percentage >= 60 && percentage < 70):
+            console.log("You Got B Grade");
+            console.log("Counter", num);    
+            Break;
+
+            case !Boolean(console.log("5")) && (percentage >= 70 && percentage < 80):
+            console.log("You Got A Grade");
+            console.log("Counter: ", num);
+            break;
+
+            case !Boolean(console.log("6")) && (percentage >= 80 && percentage <= 100):
+            console.log("You Got A1 Grade");
+            console.log("Counter: ", num);
+            break;
+
+            default:
+                console.log("Invalid Percentage Must Be Between 0 And 100");
+                Break;
+        }
+    </script>
+</body>
+</html>

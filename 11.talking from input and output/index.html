@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+</head>
+<body>
+    <h1>BMI Calculator</h1>
+
+    <form onsubmit="calculateBMI(); return false">
+        <label for="heightInputFeet">
+            Your Height:
+        </label>
+        <input required step="1" class="heightInputField" id="heightInputFeet" type="number" min="0" max="10"
+        placeholder="feet" size="5">
+        <input required step="1" class="heightInputField" id="heightInputInch" type="number" min="0" max="11"
+        placeholder="inch">
+
+        <br>
+
+        <label for="weightInputKg">
+            Your Weight:
+        </label>
+        <input required step="0.1" class="weightInputField" id="weightInputKg"
+        type="number" placeholder="100kg">
+
+        <button type="submit">Calculate</button>
+     </form>
+
+     <div id="result">
+        <h2 id="title"></h2>
+        <p id="suggestion"></p>
+    </div>
+
+    <img src="./bmi-chart.gif" alt="">
+
+    <script type="module">
+        window.calculateBMI = function calculateBMI() {
+            let heightInputFeet = document.getElementById("heightInputFeet").value;
+            let heightInputInch = document.querySelector("#heightInputInch").value;
+
+            let weightInputKg = document.querySelector("#weightInputKg").value;
+
+            heightInputFeet = parseInt(heightInputFeet);
+            heightInputInch = parseInt(heightInputFeet);
+
+            heightInputInch += heightInputFeet * 12;
+
+            let heightInMeter = (heightInputInch * 2.54) /100;
+
+            let heightInMeterSq = heightInMeter * heightInMeter;
+
+            let bodyMassIndex = weightInputKg / heightInMeterSq;
+
+            let idealweight = 22 * heightInMeterSq;
+
+            let weightToLose = (weightInputKg - idealweight).toFixed(2);
+            let weightToGain = (idealweight - weightInputKg).toFixed(2);
+
+            let suggestion = "You Are";
+
+            if (bodyMassIndex > 30){
+                suggestion += 'Obese. You Need To Lose ${weightToLose}kg';
+            } else if (bodyMassIndex > 25){
+                suggestion += 'Overweight.You Need To Lose ${weightToLose}kg';
+            } else if (bodyMassIndex > 18.5) {
+                if (bodyMassIndex > 22) {
+                    suggestion += 'Normal But Optionally You May Lose ${weightToLose} indexes to become ideally fit'
+                } else if (parseInt(bodyMassIndex) === 22){
+                    suggestion += 'Perfectly Fit'
+                } else {
+                    suggestion += 'Normal But Optionlly You May Gain ${weightToGain} indexes to become idaelly fit' 
+                } 
+            } else {
+                suggestion +='Underweight. You Are Supposed To Gain ${weightToGain} Kg To Become Normal'
+            }
+
+            console.log("index: ", bodyMassIndex);
+            console.log("title: ", title);
+            console.log("idealWeight: ", idealweight);
+
+            document.querySelector("#title").innerHTML = `Ideal weight: ${(idealweight).toFixed(2)}kg`
+            document.querySelector("#suggestion").innerHTML = suggestion;
+
+
+            
+
+        }
+
+
+    </script>
+</body>
+</html>
